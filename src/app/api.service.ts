@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,7 +16,19 @@ export class ApiService {
   }
 
   // Example method to make a POST request
-  postData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/post`, data);
+  postData(payload: { endpoint: string, data: any }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}${payload.endpoint}`, payload.data);
+  }
+
+  getAuthToken(): string | null {
+    return window.localStorage.getItem("auth_token");
+  }
+
+  setAuthToken(token: string | null): void {
+    if (token !== null) {
+      window.localStorage.setItem("auth_token", token);
+    } else {
+      window.localStorage.removeItem("auth_token");
+    }
   }
 }
