@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AxiosService } from '../axios.service';
+import { Component } from '@angular/core';
 import { NgFor } from '@angular/common'; 
 import { LoginFormComponent } from '../login-form/login-form.component';
 
@@ -10,18 +9,8 @@ import { LoginFormComponent } from '../login-form/login-form.component';
   templateUrl: './auth-content.component.html',
   styleUrls: ['./auth-content.component.css']
 })
-export class AuthContentComponent implements OnInit {
+export class AuthContentComponent {
   data: string[] = [];
 
-  constructor(private axiosService: AxiosService) { }
-
-  ngOnInit(): void {
-    this.axiosService.request(
-      "GET",
-      "/messages",
-      {}
-    ).then(
-      (response) => this.data = response.data
-    );
-  }
+  
 }
