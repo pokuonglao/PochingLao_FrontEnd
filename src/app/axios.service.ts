@@ -28,19 +28,5 @@ export class AxiosService {
     }
   }
 
-  async request(method: string, url: string, data: any): Promise<any> {
-    try {
-      const headers = this.getAuthToken() ? { "Authorization": "Bearer " + this.getAuthToken() } : {};
-      const response = await this.axiosInstance({
-        method: method,
-        url: url,
-        data: data,
-        headers: headers
-      });
-      return response.data;
-    } catch (error) {
-      console.error('Axios request error:', error);
-      throw error;
-    }
-  }
+  
 }
