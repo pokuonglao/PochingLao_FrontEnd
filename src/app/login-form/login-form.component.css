@@ -1,0 +1,96 @@
+/* Center the row */
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Adjust width of the column */
+  .col-md-6,
+  .col-lg-4 {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Style for the navigation pills */
+  .nav-pills {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Add some padding */
+    list-style: none;
+  }
+  
+  /* Adjust button styles */
+  .nav-link {
+    color: #333;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .nav-link.active {
+    background-color: #007bff; /* Blue background for active link */
+    color: #fff; /* White text for active link */
+  }
+  
+  /* Style for the tab content */
+  .tab-content {
+    padding: 20px; /* Add some padding */
+  }
+  
+  /* Hide tab content by default */
+  .tab-pane {
+    display: none;
+  }
+  
+  /* Show active tab content */
+  .tab-pane.show {
+    display: block;
+  }
+  
+  /* Style for form inputs */
+  .form-outline {
+    position: relative;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .form-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #f0f8ff; /* Match the background color */
+    padding: 0 5px;
+    color: #999; /* Lighter color for placeholder text */
+  }
+  
+  /* Style for form buttons */
+  .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Blue background for primary button */
+    color: #fff; /* White text for primary button */
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .col-md-6,
+    .col-lg-4 {
+        width: 100%;
+        max-width: none;
+    }
+  }
