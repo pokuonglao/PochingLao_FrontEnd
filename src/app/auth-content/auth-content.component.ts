@@ -3,6 +3,7 @@ import { AxiosService } from '../axios.service';
 
 @Component({
   selector: 'app-auth-content',
+  standalone:true,
   templateUrl: './auth-content.component.html',
   styleUrls: ['./auth-content.component.css']
 })
