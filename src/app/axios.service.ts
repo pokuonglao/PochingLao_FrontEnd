@@ -20,13 +20,6 @@ export class AxiosService {
     return window.localStorage.getItem("auth_token");
   }
 
-  setAuthToken(token: string | null): void {
-    if (token !== null) {
-      window.localStorage.setItem("auth_token", token);
-    } else {
-      window.localStorage.removeItem("auth_token");
-    }
-  }
-
+  
   
 }
