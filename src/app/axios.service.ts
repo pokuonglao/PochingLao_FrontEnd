@@ -1,14 +1,39 @@
 import { Injectable } from '@angular/core';
+import axios from 'axios';
 
-
-
-/**
- * The AxiosService class provides a centralized service for making HTTP requests
- * using Axios in an Angular application.
- */
 @Injectable({
-  providedIn: 'root' // This service will be available application-wide.
+  providedIn: 'root'
 })
 export class AxiosService {
-  
+
+  constructor() {
+    axios.defaults.baseURL = "http://localhost:8080";
+    axios.defaults.headers['Content-Type'] = "application/json";
+  }
+
+  getAuthToken(): string | null {
+    return window.localStorage.getItem("auth_token");
+  }
+
+  setAuthToken(token: string | null): void {
+    if (token !== null) {
+      window.localStorage.setItem("auth_token", token);
+    }else {
+      window.localStorage.removeItem("auth_token");
+    }
+  }
+
+  request(method: string, url: string, data: any): Promise<any> {
+    let headers={}
+
+    if (this.getAuthToken() !== null) {
+      headers = {"Authorization": "Bearer " + this.getAuthToken()};
+    }
+    return axios({
+      method: method,
+      url: url,
+      data: data,
+      headers: headers
+    });
+  }
 }
