@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AxiosService } from '../axios.service';
 
 @Component({
   selector: 'app-content',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
-
+  componentToShow: string ="welcome";
+  constructor(private axiosService: AxiosService) { }
 }
