@@ -3,7 +3,6 @@ import { ButtonsComponent } from '../buttons/buttons.component';
 import { WelcomeContentComponent } from '../welcome-content/welcome-content.component';
 import { AuthContentComponent } from '../auth-content/auth-content.component';
 import { CommonModule } from '@angular/common';
-import { AxiosService } from '../axios.service';
 import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
@@ -15,11 +14,5 @@ import { LoginFormComponent } from '../login-form/login-form.component';
 })
 export class ContentComponent {
   componentToShow: string ="welcome";
-  
 
-  showComponent(componentToShow: string): void {
-    this.componentToShow = componentToShow;
-   }
-
-  
 }
