@@ -1,16 +1,10 @@
 import { Component } from '@angular/core';
-import { LoginFormComponent } from '../login-form/login-form.component';
 import { AxiosService } from '../axios.service';
-import { response } from 'express';
-import { ButtonsComponent } from '../buttons/buttons.component';
-import { WelcomeContentComponent } from '../welcome-content/welcome-content.component';
-import { AuthContentComponent } from '../auth-content/auth-content.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [LoginFormComponent,ButtonsComponent,WelcomeContentComponent,AuthContentComponent,CommonModule],
+  imports: [],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css'
 })
