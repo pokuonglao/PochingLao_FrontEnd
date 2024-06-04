@@ -5,15 +5,5 @@ import axios, { AxiosInstance } from 'axios';
   providedIn: 'root'
 })
 export class AxiosService {
-  private axiosInstance: AxiosInstance;
-
-  constructor() {
-    this.axiosInstance = axios.create({
-      baseURL: "http://localhost:8080",
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  }
   
 }
