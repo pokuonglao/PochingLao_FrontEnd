@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AxiosService } from '../axios.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-auth-content',
   standalone:true,
+  imports:[CommonModule],
   templateUrl: './auth-content.component.html',
   styleUrls: ['./auth-content.component.css']
 })
