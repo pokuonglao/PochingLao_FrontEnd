@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AxiosService {
+  private axiosInstance: AxiosInstance;
 
   constructor() {
-    axios.defaults.baseURL = "http://localhost:8080";
-    axios.defaults.headers['Content-Type'] = "application/json";
+    this.axiosInstance = axios.create({
+      baseURL: "http://localhost:8080",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
   }
 
   getAuthToken(): string | null {
@@ -18,22 +23,25 @@ export class AxiosService {
   setAuthToken(token: string | null): void {
     if (token !== null) {
       window.localStorage.setItem("auth_token", token);
-    }else {
+    } else {
       window.localStorage.removeItem("auth_token");
     }
   }
 
-  request(method: string, url: string, data: any): Promise<any> {
-    let headers={}
-
-    if (this.getAuthToken() !== null) {
-      headers = {"Authorization": "Bearer " + this.getAuthToken()};
+  async request(method: string, url: string, data: any): Promise<any> {
+    try {
+      const headers = this.getAuthToken() ? { "Authorization": "Bearer " + this.getAuthToken() } : {};
+      const response = await this.axiosInstance({
+        method: method,
+        url: url,
+        data: data,
+        headers: headers
+      });
+      return response.data;
+    } catch (error) {
+      // Handle error appropriately here, e.g., logging or rethrowing
+      console.error('Axios request error:', error);
+      throw error;
     }
-    return axios({
-      method: method,
-      url: url,
-      data: data,
-      headers: headers
-    });
   }
 }
