@@ -1,0 +1,43 @@
+/* Info Container */
+.info-container {
+    background-color: #f0f8ff; /* Baby blue */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for better separation */
+  }
+  
+  /* Headings */
+  .info-container h2 {
+    color: #007bff; /* Match with the primary blue color */
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* List */
+  .info-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .info-container ul li {
+    margin-bottom: 10px;
+    color: #333; /* Darker color for better readability */
+    font-size: 16px;
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .info-container {
+      padding: 15px;
+    }
+  
+    .info-container h2 {
+      font-size: 20px;
+    }
+  
+    .info-container ul li {
+      font-size: 14px;
+    }
+  }
+  

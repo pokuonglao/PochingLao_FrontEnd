@@ -1,0 +1,102 @@
+/* Main Container */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Introduction Container */
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .about-container-left {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-container-photo {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .profile-photo {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  
+  /* Educational Resources Container */
+  .education-container,
+  .services-container,
+  .appointment-container,
+  .testimonial-container,
+  .contact-container {
+    margin-bottom: 30px;
+  }
+  
+  /* Headings */
+  h2 {
+    color: #007bff; /* Blue color */
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraphs */
+  p {
+    color: #333; /* Darker color for better readability */
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* List */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Testimonials */
+  .testimonial {
+    margin-bottom: 20px;
+  }
+  
+  .testimonial p {
+    font-style: italic;
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+    }
+  
+    .about-container-left,
+    .about-container-photo {
+      text-align: center;
+    }
+  
+    .about-container-photo {
+      margin-top: 20px; /* Add some space between text and photo */
+    }
+  
+    .profile-photo {
+      width: 75%; /* Adjust photo size for better visibility */
+    }
+  
+    /* Adjust font sizes for better readability */
+    h2 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  }

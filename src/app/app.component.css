@@ -1,0 +1,72 @@
+/* Header */
+header {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+  }
+  
+  #logo_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #left-container, #middle-container, #right-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #middle-container a {
+    color: #fff; /* White text for link */
+    text-decoration: none; /* Remove underline */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+  }
+  
+  /* Logos */
+  .se-icon svg {
+    width: 24px; /* Adjust size */
+    height: 24px; /* Adjust size */
+    fill: #fff; /* White color for logo */
+    transition: fill 0.3s ease; /* Smooth transition effect */
+  }
+  
+  .se-icon:hover svg {
+    fill: #ffc107; /* Yellow color on hover */
+  }
+  
+  /* Main */
+  main {
+    padding: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f8f9fa; /* Light grey */
+    color: #333; /* Dark grey text */
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    #logo_container {
+      flex-direction: row;
+    }
+  
+    #middle-container a {
+      font-size: 20px; /* Decrease font size for smaller screens */
+    }
+  
+    #left-container,
+    #right-container {
+      justify-content: center;
+    }
+  }
