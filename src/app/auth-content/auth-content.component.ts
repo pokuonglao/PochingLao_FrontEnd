@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AxiosService } from '../axios.service';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-auth-content',
@@ -12,15 +12,16 @@ import { CommonModule } from '@angular/common';
 export class AuthContentComponent implements OnInit {
   data: string[] = [];
 
-  constructor(private axiosService: AxiosService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.axiosService.request(
-      "GET",
-      "/messages",
-      {}
-    ).then(
-      (response) => this.data = response.data
+    this.apiService.getData().subscribe(
+      (response) => {
+        this.data = response;
+      },
+      (error) => {
+        console.error('Error fetching messages:', error);
+      }
     );
   }
 }
