@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import axios, { AxiosInstance } from 'axios';
+
 
 
 /**
@@ -10,17 +10,5 @@ import axios, { AxiosInstance } from 'axios';
   providedIn: 'root' // This service will be available application-wide.
 })
 export class AxiosService {
-  private axiosInstance: AxiosInstance; // Axios instance to handle HTTP requests
-
-  /**
-   * Constructor initializes the Axios instance with default configuration.
-   */
-  constructor() {
-    this.axiosInstance = axios.create({
-      baseURL: "http://localhost:8080", // Set the base URL for Axios requests
-      headers: {
-        'Content-Type': 'application/json' // Default content type for requests
-      }
-    });
-  }
+  
 }
