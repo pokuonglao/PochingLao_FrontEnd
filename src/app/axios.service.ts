@@ -15,11 +15,5 @@ export class AxiosService {
       }
     });
   }
-
-  getAuthToken(): string | null {
-    return window.localStorage.getItem("auth_token");
-  }
-
-  
   
 }
