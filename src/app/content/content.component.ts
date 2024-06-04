@@ -14,5 +14,7 @@ import { LoginFormComponent } from '../login-form/login-form.component';
 })
 export class ContentComponent {
   componentToShow: string ="welcome";
-
+  showComponent(componentToShow: string): void {
+    this.componentToShow = componentToShow;
+   }
 }
