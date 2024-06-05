@@ -1,41 +1,40 @@
 /* Welcome Container */
 .welcome-container {
-    text-align: center; /* Center align text */
-    padding: 40px 20px; /* Add padding */
-    background-color: #f0f8ff; /* Light blue background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
-    max-width: 600px; /* Max width for content */
-    margin: 40px auto; /* Center container on the page */
+  text-align: center; /* Center align text */
+  padding: 40px 20px; /* Add padding */
+  background-color: #f0f8ff; /* Light blue background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  max-width: 600px; /* Max width for content */
+  margin: 40px auto; /* Center container on the page */
+}
+
+/* Style for the heading */
+.welcome-container h1 {
+  color: #007bff; /* Blue color */
+  font-size: 32px; /* Larger font size for heading */
+  margin-bottom: 20px; /* More space below the heading */
+}
+
+/* Style for the paragraph */
+.welcome-container p {
+  font-size: 18px; /* Adjust font size */
+  color: #333; /* Darker color for better readability */
+  margin-bottom: 0; /* Remove default margin below paragraph */
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .welcome-container {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
   }
-  
-  /* Style for the heading */
+
   .welcome-container h1 {
-    color: #007bff; /* Blue color */
-    font-size: 32px; /* Larger font size for heading */
-    margin-bottom: 20px; /* More space below the heading */
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin-bottom: 15px; /* Adjust space below the heading */
   }
-  
-  /* Style for the paragraph */
+
   .welcome-container p {
-    font-size: 18px; /* Adjust font size */
-    color: #333; /* Darker color for better readability */
-    margin-bottom: 0; /* Remove default margin below paragraph */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
-  
-  /* Mobile Styles */
-  @media screen and (max-width: 768px) {
-    .welcome-container {
-      padding: 20px 10px; /* Adjust padding for smaller screens */
-    }
-  
-    .welcome-container h1 {
-      font-size: 24px; /* Adjust font size for smaller screens */
-      margin-bottom: 15px; /* Adjust space below the heading */
-    }
-  
-    .welcome-container p {
-      font-size: 16px; /* Adjust font size for smaller screens */
-    }
-  }
-  
+}

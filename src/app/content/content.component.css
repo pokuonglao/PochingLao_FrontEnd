@@ -1,12 +1,11 @@
 /* Style for the parent div */
 div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Style for the buttons component */
-  app-buttons {
-    margin-bottom: 20px; /* Add some space below the buttons */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the buttons component */
+app-buttons {
+  margin-bottom: 20px; /* Add some space below the buttons */
+}
