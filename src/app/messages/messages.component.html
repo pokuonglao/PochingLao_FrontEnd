@@ -1,0 +1,14 @@
+<h1>Messages</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+  </tr>
+  <tr *ngFor="let message of displayedMessages">
+    <td>{{message.name}}</td>
+    <td>{{message.email}}</td>
+    <td>{{ getTruncatedMessage(message.message) }}</td>
+    <td><button class="btn btn-primary" (click)="viewMessageDetails(message)">View Details</button></td>
+  </tr>
+</table>

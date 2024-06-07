@@ -9,3 +9,28 @@ div {
 app-buttons {
   margin-bottom: 20px; /* Add some space below the buttons */
 }
+
+/* Button Styling */
+button {
+  background-color: #007bff; /* Primary blue */
+  color: #fff; /* White */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  
+  
+    button[type="submit"] {
+      padding: 8px 15px;
+    }
+
+}

@@ -1,0 +1,12 @@
+<h1>Patients</h1>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr *ngFor="let user of displayedUsers">
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td><button class="btn btn-primary" (click)="viewUserDetails(user)">View Details</button></td>
+  </tr>
+</table>

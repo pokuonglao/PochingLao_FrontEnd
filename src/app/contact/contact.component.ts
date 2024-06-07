@@ -1,19 +1,20 @@
-import { Component,EventEmitter,Output } from '@angular/core';
-import { HttpClient,HttpHeaders  } from '@angular/common/http';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ButtonsComponent } from '../buttons/buttons.component';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { AuthService } from '../auth.service';
+import { ContactWelcomeContentComponent } from '../contact-welcome-content/contact-welcome-content.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ButtonsComponent,LoginFormComponent,NgIf,FormsModule],
+  imports: [ButtonsComponent, LoginFormComponent, NgIf, FormsModule, ContactWelcomeContentComponent],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrls: ['./contact.component.css'] // Make sure this is styleUrls, not styleUrl
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   @Output() onSubmitMessageEvent = new EventEmitter();
 
   componentToShow: string = "welcome";
@@ -22,8 +23,14 @@ export class ContactComponent {
   name: string = "";
   email: string = "";
   message: string = "";
-  
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient, public authService: AuthService) {}
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.showComponent('messages');
+    }
+  }
 
   showComponent(componentToShow: string): void {
     this.componentToShow = componentToShow;
@@ -40,15 +47,14 @@ export class ContactComponent {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.getAuthToken()
+      'Authorization': 'Bearer ' + this.authService.getAuthToken()
     });
 
-    this.http.post("http://localhost:8080/api/addMessages", formData, { headers }).subscribe(
+    this.http.post("http://localhost:8080/messages/addMessages", formData, { headers }).subscribe(
       (response: any) => {
         console.log('Data received:', response);
-        if (response && response.success) {
+        if (response) {
           console.log('Message added successfully!');
-          // Reset the form after successful submission
           this.resetForm();
         } else {
           console.log('Failed to add message. Please try again later.');
@@ -66,23 +72,15 @@ export class ContactComponent {
     this.message = "";
   }
 
-  getAuthToken(): string | null {
-    return window.localStorage.getItem("auth_token");
-  }
-
   onLogin(input: any): void {
-    this.http.post('http://localhost:8080/login', {
-      login: input.login,
-      password: input.password
-    }).subscribe(
+    this.authService.login(input.login, input.password).subscribe(
       (response: any) => {
         this.responseData = response;
         console.log('Login successful');
-        
-        // Store the token in localStorage
+
         if (this.responseData.token) {
-          this.setAuthToken(this.responseData.token);
-          this.showComponent('message');
+          this.authService.setAuthToken(this.responseData.token);
+          this.showComponent('messages');
         } else {
           console.error('Token not found in response');
         }
@@ -94,20 +92,14 @@ export class ContactComponent {
   }
 
   onRegister(input: any): void {
-    this.http.post('http://localhost:8080/register', {
-      firstName: input.firstName,
-      lastName: input.lastName,
-      login: input.login,
-      password: input.password
-    }).subscribe(
+    this.authService.register(input.firstName, input.lastName, input.login, input.password).subscribe(
       (response: any) => {
         this.responseData = response;
         console.log('Registration successful:', this.responseData);
 
-        // Store the token in localStorage
         if (this.responseData.token) {
-          this.setAuthToken(this.responseData.token);
-          this.showComponent('message');
+          this.authService.setAuthToken(this.responseData.token);
+          this.showComponent('messages');
         } else {
           console.error('Token not found in response');
         }
@@ -118,11 +110,8 @@ export class ContactComponent {
     );
   }
 
-  setAuthToken(token: string | null): void {
-    if (token !== null) {
-      window.localStorage.setItem("auth_token", token);
-    } else {
-      window.localStorage.removeItem("auth_token");
-    }
+  onLogout(): void {
+    this.authService.logout();
+    this.showComponent('welcome');
   }
 }

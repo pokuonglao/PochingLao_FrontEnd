@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+    <nav class="dashboard-nav">
+      <h1>DashBoard Menu</h1>
+      <ul>
+        <li><button [ngClass]="active == 'messages' ? 'active' : ''" (click)="onMessagesTab()">Messages</button></li>
+        <li><button [ngClass]="active == 'patients' ? 'active' : ''" (click)="onPatientsTab()">Patients</button></li>
+      </ul>
+    </nav>
+    <div class="dashboard-content">
+      <app-messages *ngIf="active == 'messages'"></app-messages>
+      <app-patients *ngIf="active == 'patients'"></app-patients>
+    </div>
+  </div>
+  
