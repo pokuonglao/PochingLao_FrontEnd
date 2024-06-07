@@ -1,29 +1,36 @@
 <div class="contact-container">
-    <h2>Contact Information</h2>
-    <p>Get in touch with Poching Lao, PA-C:</p>
-    <ul>
-      <li>Email: example&#64;example.com</li>
-      <li>Phone: 123-456-7890</li>
-      <li>Address: 123 Street, City, Country</li>
-    </ul>
-  </div>
+  <h2>Contact Information</h2>
+  <p>Get in touch with Poching Lao, PA-C:</p>
+  <ul>
+    <li>Email: example&#64;example.com</li>
+    <li>Phone: 123-456-7890</li>
+    <li>Address: 123 Street, City, Country</li>
+  </ul>
+</div>
+
+<div>
+  <app-buttons (loginEvent)="showComponent('login')" (logoutEvent)="showComponent('welcome')"></app-buttons>
+  <app-login-form *ngIf="componentToShow == 'login'" 
+                  (onSubmitLoginEvent)="onLogin($event)" 
+                  (onSubmitRegisterEvent)="onRegister($event)">
+  </app-login-form>
   
-  <div class="contact-form-container">
+  <div *ngIf="componentToShow == 'message'" class="contact-form-container">
     <h2>Contact Form</h2>
-    <form>
+    <form (ngSubmit)="onSubmitMessage()">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
       </div>
       <div class="form-group">
         <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" [(ngModel)]="message" required></textarea>
       </div>
       <button type="submit">Send Message</button>
     </form>
   </div>
-  
+</div>

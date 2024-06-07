@@ -1,6 +1,14 @@
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 /* Header */
 header {
-  background-color: #f1dac4;
+    background-color: #f1dac4;
     color: #fff; 
     padding: 10px 20px;
   }
@@ -17,13 +25,14 @@ header {
     align-items: center;
     justify-content: center;
   }
-  
-  #middle-container a {
-    color: #474973; 
-    text-decoration: none; /* Remove underline */
-    font-size: 24px; /* Adjust font size */
+
+  .site-title {
+    color: #474973;
+    text-decoration: none;
+    font-size: 24px;
     font-weight: bold;
   }
+  
   
   /* Logos */
   .se-icon svg {
@@ -39,6 +48,7 @@ header {
   
   /* Main */
   main {
+    flex: 1; /* Take remaining vertical space */
     padding: 20px;
     background-color: #f1dac4;
   }
@@ -48,7 +58,7 @@ header {
     background-color: rgb(244, 218, 196); 
     color: #474973; 
     text-align: center;
-    padding: 10px;
+    padding: 10px 20px; /* Padding for better spacing */
   }
   
   /* Mobile Styles */
@@ -62,12 +72,16 @@ header {
       flex-direction: row;
     }
   
-    #middle-container a {
-      font-size: 20px; 
+    .site-title {
+      font-size: 20px;
     }
   
     #left-container,
     #right-container {
       justify-content: center;
+    }
+
+    footer {
+      font-size: 14px; /* Decrease font size for smaller screens */
     }
   }

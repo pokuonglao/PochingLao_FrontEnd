@@ -36,7 +36,6 @@ ul li {
   margin-bottom: 10px;
 }
 
-/* Form Styling */
 form {
   margin-top: 10px;
 }
@@ -77,6 +76,7 @@ button[type="submit"]:hover {
   background-color: #0056b3; /* Darker blue */
 }
 
+
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .contact-container, .contact-form-container {
@@ -94,12 +94,13 @@ button[type="submit"]:hover {
   }
 
   input[type="text"],
-  input[type="email"],
-  textarea {
-    padding: 8px;
-  }
+    input[type="email"],
+    textarea {
+      padding: 8px;
+    }
+  
+    button[type="submit"] {
+      padding: 8px 15px;
+    }
 
-  button[type="submit"] {
-    padding: 8px 15px;
-  }
 }

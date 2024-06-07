@@ -1,13 +1,17 @@
 .popup-navigation {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   width: 100%;
   height: 100%;
   display: none;
   z-index: 1;
-  animation: fadeInOut 0.3s ease; /* Apply fade-in/out animation */
+  animation: fadeInOut 0.3s ease;
 }
+
+h2 {
+  color: rgb(71, 73, 115);
+ }
 
 .popup-navigation.show {
   display: flex;
@@ -31,14 +35,13 @@
   left: 10px;
   cursor: pointer;
   color: black;
-  padding-top: 50px;
 }
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 ul li {
@@ -49,10 +52,12 @@ ul li a {
   color: rgb(71, 73, 115);
   text-decoration: none;
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 ul li a:hover {
   text-decoration: underline;
+  color: var(--hover-color);
 }
 
 .social-media-list {
@@ -68,7 +73,6 @@ ul li a:hover {
   margin-right: 0;
 }
 
-/* Define the fade-in/out animation */
 @keyframes fadeInOut {
   0% { opacity: 0; }
   100% { opacity: 1; }

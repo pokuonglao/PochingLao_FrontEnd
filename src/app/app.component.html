@@ -1,41 +1,41 @@
-<header>
-  <div id="logo_container">
-    <div id="left-container">
-      <div data-sid="logo_2" class="sie-logo_2 se se-pc" (click)="toggleNavigation()">
-        <div class="se-icon">
+<div class="wrapper">
+  <header>
+    <div id="logo_container">
+      <div id="left-container">
+        <div class="logo se-icon" (click)="toggleNavigation()" aria-label="Toggle Navigation">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M80 304h352v16H80zM80 248h352v16H80zM80 192h352v16H80z"></path>
           </svg>
         </div>
       </div>
-    </div>
 
-    <!-- Show navigation menu when showNavigation is true -->
-    <app-navigation [showNavigation]="showNavigation"></app-navigation>
+      <!-- Show navigation menu when showNavigation is true -->
+      <nav>
+        <app-navigation [showNavigation]="showNavigation"></app-navigation>
+      </nav>
 
-    <div id="middle-container">
-      <a href="#">Poching Lao</a>
-    </div>
+      <div id="middle-container">
+        <a href="#" class="site-title">Poching Lao</a>
+      </div>
 
-    <div id="right-container">
-      <a href="/shop" target="_self" class="sie-logo_4 se" data-sid="logo_4" style="transform: scale(1.00625, 1.00625) translate(1.67702px, 0.142857px);">
-        <div class="se-icon">
+      <div id="right-container">
+        <a href="/shop" target="_self" class="logo se-icon" aria-label="Shop">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M460.45,119.09a12,12,0,0,0-9.47-4.62H139.43L134.19,83a12,12,0,0,0-11.84-10H56a12,12,0,0,0,0,24h56.18l28.23,169.39v0a11.88,11.88,0,0,0,.66,3.88L152,335.78a12,12,0,0,0,11.84,10H399.15a12,12,0,0,0,0-24H174l-7.23-43.39h249a12,12,0,0,0,11.64-9.07l35.25-140A12,12,0,0,0,460.45,119.09ZM406.38,254.42H162.75L143.43,138.47H435.58Z"></path>
-            <path d="M189.73,373.39a34.81,34.81,0,1,0,34.81,34.8A34.84,34.84,0,0,0,189.73,373.39Zm0,45.61a10.81,10.81,0,1,1,10.81-10.81A10.81,10.81,0,0,1,189.73,419Z"></path>
-            <path d="M376.34,373.39a34.81,34.81,0,1,0,34.81,34.8A34.85,34.85,0,0,0,376.34,373.39Zm0,45.61a10.81,10.81,0,1,1,10.81-10.81A10.82,10.82,0,0,1,376.34,419Z"></path>
+          <path d="M189.73,373.39a34.81,34.81,0,1,0,34.81,34.8A34.84,34.84,0,0,0,189.73,373.39Zm0,45.61a10.81,10.81,0,1,1,10.81-10.81A10.81,10.81,0,0,1,189.73,419Z"></path>
+          <path d="M376.34,373.39a34.81,34.81,0,1,0,34.81,34.8A34.85,34.85,0,0,0,376.34,373.39Zm0,45.61a10.81,10.81,0,1,1,10.81-10.81A10.82,10.82,0,0,1,376.34,419Z"></path>
           </svg>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <!-- Main content area where routed components will be displayed -->
-  <router-outlet></router-outlet>
-</main>
+  <main>
+    <!-- Main content area where routed components will be displayed -->
+    <router-outlet></router-outlet>
+  </main>
 
-<footer>
-  <p>&copy; 2024 Poching Lao. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2024 Poching Lao. All rights reserved.</p>
+  </footer>
+</div>
