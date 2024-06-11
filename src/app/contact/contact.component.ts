@@ -50,7 +50,7 @@ export class ContactComponent implements OnInit {
       'Authorization': 'Bearer ' + this.authService.getAuthToken()
     });
 
-    this.http.post("http://localhost:8080/messages/addMessages", formData, { headers }).subscribe(
+    this.http.post("ec2-54-176-212-42.us-west-1.compute.amazonaws.com/messages/addMessages", formData, { headers }).subscribe(
       (response: any) => {
         console.log('Data received:', response);
         if (response) {

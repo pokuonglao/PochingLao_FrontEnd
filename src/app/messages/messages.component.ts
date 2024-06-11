@@ -30,7 +30,7 @@ export class MessagesComponent implements OnInit {
       'Authorization': 'Bearer ' + this.getAuthToken()
     });
 
-    this.http.get<Messages[]>("http://localhost:8080/messages/getMessages", { headers }).subscribe(
+    this.http.get<Messages[]>("ec2-54-176-212-42.us-west-1.compute.amazonaws.com/messages/getMessages", { headers }).subscribe(
       (response: Messages[]) => {
         this.data = response;
         this.updateDisplayedMessages();
