@@ -31,6 +31,7 @@ export class MessagesComponent implements OnInit {
     });
 
     this.http.get<Messages[]>("https://d3o19kh4z8vj4z.cloudfront.net/messages/getMessages", { headers }).subscribe(
+
       (response: Messages[]) => {
         this.data = response;
         this.updateDisplayedMessages();

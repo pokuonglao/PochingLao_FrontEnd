@@ -51,6 +51,7 @@ export class ContactComponent implements OnInit {
     });
 
     this.http.post("https://d3o19kh4z8vj4z.cloudfront.net/messages/addMessages", formData, { headers }).subscribe(
+
       (response: any) => {
         console.log('Data received:', response);
         if (response) {

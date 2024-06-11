@@ -30,6 +30,7 @@ export class PatientsComponent implements OnInit{
     });
 
     this.http.get<Users[]>("https://d3o19kh4z8vj4z.cloudfront.net/users/getUsers", { headers }).subscribe(
+
       (response: Users[]) => {
         this.data = response;
         this.updateDisplayedUsers();
