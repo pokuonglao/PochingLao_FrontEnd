@@ -29,7 +29,7 @@ export class PatientsComponent implements OnInit{
       'Authorization': 'Bearer ' + this.getAuthToken()
     });
 
-    this.http.get<Users[]>("ec2-54-176-212-42.us-west-1.compute.amazonaws.com/users/getUsers", { headers }).subscribe(
+    this.http.get<Users[]>("https://d3o19kh4z8vj4z.cloudfront.net/users/getUsers", { headers }).subscribe(
       (response: Users[]) => {
         this.data = response;
         this.updateDisplayedUsers();
