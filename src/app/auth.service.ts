@@ -31,11 +31,11 @@ export class AuthService {
   }
 
   login(login: string, password: string): Observable<any> {
-    return this.http.post('ec2-54-176-212-42.us-west-1.compute.amazonaws.com/login', { login, password });
+    return this.http.post('https://d129impgfwqu0k.cloudfront.net/pochinglao/login', { login, password });
   }
 
   register(firstName: string, lastName: string, login: string, password: string): Observable<any> {
-    return this.http.post('ec2-54-176-212-42.us-west-1.compute.amazonaws.com/register', { firstName, lastName, login, password });
+    return this.http.post('https://d129impgfwqu0k.cloudfront.net/pochinglao/register', { firstName, lastName, login, password });
   }
 
   logout(): void {

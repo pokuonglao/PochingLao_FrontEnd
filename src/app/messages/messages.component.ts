@@ -30,7 +30,7 @@ export class MessagesComponent implements OnInit {
       'Authorization': 'Bearer ' + this.getAuthToken()
     });
 
-    this.http.get<Messages[]>("ec2-54-176-212-42.us-west-1.compute.amazonaws.com/messages/getMessages", { headers }).subscribe(
+    this.http.get<Messages[]>("https://d129impgfwqu0k.cloudfront.net/pochinglao/messages/getMessages", { headers }).subscribe(
       (response: Messages[]) => {
         this.data = response;
         this.updateDisplayedMessages();
