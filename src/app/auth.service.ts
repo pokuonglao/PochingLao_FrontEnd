@@ -31,11 +31,11 @@ export class AuthService {
   }
 
   login(login: string, password: string): Observable<any> {
-    return this.http.post('https://d3o19kh4z8vj4z.cloudfront.net/login', { login, password });
+    return this.http.post('http://localhost:8080/login', { login, password });
   }
 
   register(firstName: string, lastName: string, login: string, password: string): Observable<any> {
-    return this.http.post('https://d3o19kh4z8vj4z.cloudfront.net/register', { firstName, lastName, login, password });
+    return this.http.post('http://localhost:8080/register', { firstName, lastName, login, password });
   }
 
   logout(): void {
