@@ -1,27 +1,43 @@
-# PochingLao
+# CareCompanion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+## Overview
+CareCompanion is a modern healthcare management system designed to streamline patient care and administrative tasks. It leverages cutting-edge technologies to ensure efficient communication, robust data management, and seamless user interaction.
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Frontend
+- **Angular**: Frontend framework for building scalable single-page applications.
+- **TypeScript**: Typed superset of JavaScript that compiles to plain JavaScript.
+- **CSS**: Cascading Style Sheets for styling web pages.
+- **Netlify**: Platform for continuous deployment and hosting of static websites.
 
-## Code scaffolding
+### Backend
+- **Spring Boot**: Framework for developing Java-based enterprise applications.
+- **JWT (JSON Web Token)**: Standard for creating secure access tokens in web applications.
+- **AWS RDS (Relational Database Service) PostgreSQL**: Managed database service for storing application data securely.
+- **AWS EC2 (Elastic Compute Cloud)**: Scalable virtual servers in the cloud for deploying backend applications.
+- **AWS CloudFront**: Content Delivery Network (CDN) for efficient content delivery with low latency.
+- **Postman**: API development and testing tool for backend services.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Key Features
+- **User Authentication**: Secure login and registration using JWT tokens.
+- **Patient Management**: Comprehensive management of patient records and information.
+- **Appointment Scheduling**: Efficient scheduling and management of patient appointments.
+- **Medical Records**: Secure storage and retrieval of patient medical records.
+- **Administrative Dashboard**: Real-time analytics and reporting for administrators.
 
-## Build
+## Deployment
+- Frontend deployed on **Netlify** for continuous integration and deployment.
+- Backend deployed on **AWS EC2** using **Spring Boot**.
+- Database hosted on **AWS RDS PostgreSQL** for reliable and scalable data storage.
+- Utilization of **AWS CloudFront** for fast and secure content delivery.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tools and Development Environment
+- **Postman**: Used for API testing and integration during development.
+- **Git**: Version control system for collaborative software development.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Future Enhancements
+- **Telemedicine Integration**: Incorporate video conferencing capabilities for remote consultations.
+- **Mobile Application Development**: Extend accessibility with a dedicated mobile application.
+- **Machine Learning**: Implement predictive analytics to enhance patient care and decision-making.
+- **E-Commerce**
