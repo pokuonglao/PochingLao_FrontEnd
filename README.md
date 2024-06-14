@@ -1,27 +1,23 @@
-# PochingLao
+# PochingLao Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+## Overview
 
-## Development server
+PochingLao Frontend is a React-based web application that provides a user interface for authentication services. The application interacts with a Spring Boot backend deployed on an AWS EC2 instance and accessed via CloudFront.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- User registration
+- User login
+- JWT token storage and usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular
+- TypeScript
+- Axios
+- Netlify (for deployment)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Node.js and npm
+- Git
