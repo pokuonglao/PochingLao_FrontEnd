@@ -1,0 +1,21 @@
+<!-- Check if images array exists -->
+<div *ngIf="images && images.length > 0">
+	<ngb-carousel>
+	  <!-- Loop through images array using ngFor and ngbSlide -->
+	  <ng-template ngbSlide *ngFor="let image of images">
+		<div class="picsum-img-wrapper">
+		  <img [src]="image.url" [alt]="image.alt" />
+		</div>
+		<div class="carousel-caption">
+		  <h3>{{ image.label }}</h3>
+		  <p>{{ image.description }}</p>
+		</div>
+	  </ng-template>
+	</ngb-carousel>
+  </div>
+  
+  <!-- Show a message if images array is empty or undefined -->
+  <div *ngIf="!images || images.length === 0">
+	<p>No images available.</p>
+  </div>
+  

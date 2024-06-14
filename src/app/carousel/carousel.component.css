@@ -1,0 +1,38 @@
+/* Styling for each slide wrapper */
+  .picsum-img-wrapper {
+    position: relative;
+    height: 100%; /* Set a fixed height for the images */
+    overflow: hidden; /* Ensure images do not overflow */
+  }
+  
+  .picsum-img-wrapper img {
+    width: 100%; /* Ensure images fill their container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Styling for the carousel caption */
+  .carousel-caption {
+    background-color: transparent; /* Semi-transparent black background */
+    color: white; /* White text color */
+    position: absolute; /* Position captions relative to their parent */
+    bottom: 30px; /* Align captions to the bottom */
+    left: 0; /* Align captions to the left */
+    width: 100%; /* Full width of parent container */
+    padding: 10px; /* Padding around text */
+  }
+  
+  .carousel-caption h3 {
+    margin-bottom: 5px; /* Adjust spacing below heading */
+  }
+  
+  .carousel-caption p {
+    margin-bottom: 0; /* Remove default margin below paragraph */
+  }
+  
+  /* Styling for the message when no images are available */
+  .no-images-message {
+    text-align: center; /* Center align text */
+    margin-top: 20px; /* Space between carousel and message */
+    color: #666; /* Gray text color */
+  }
+  

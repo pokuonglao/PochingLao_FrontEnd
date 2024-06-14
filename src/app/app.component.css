@@ -9,7 +9,6 @@
 /* Header */
 header {
     background-color: #f1dac4;
-    color: #fff; 
     padding: 10px 20px;
   }
   
@@ -55,11 +54,14 @@ header {
   
   /* Footer */
   footer {
-    background-color: rgb(244, 218, 196); 
-    color: #474973; 
+    background-color: #f1dac4;
+    color: #474973;
     text-align: center;
-    padding: 10px 20px; /* Padding for better spacing */
-  }
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
   
   /* Mobile Styles */
   @media screen and (max-width: 768px) {
