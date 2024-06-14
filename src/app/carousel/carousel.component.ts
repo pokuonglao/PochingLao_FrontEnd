@@ -12,10 +12,10 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 export class CarouselComponent {
    // Define your images array with actual data
    images = [
-    { url: 'IMG_4076 (1).jpg', alt: 'Image 2 Alt Text', label: '', description: 'Poching and her peers' },
-    { url: 'IMG_4080 (1).jpg', alt: 'Image 3 Alt Text', label: '', description: 'Poching caring for patient' },
-    { url: 'IMG_4081 (1).jpg', alt: 'Image 1 Alt Text', label: '', description: 'Poching taking data for patient' },
-    { url: 'IMG_4086 (1).jpg', alt: 'Image 2 Alt Text', label: '', description: 'Poching keeping a child company' },
-    { url: 'IMG_4088 (1).jpg', alt: 'Image 3 Alt Text', label: '', description: 'Poching taking data for patient' }
+    { url: '/IMG_4076 (1).jpg', alt: 'Image 2 Alt Text', label: '', description: 'Poching and her peers' },
+    { url: '/IMG_4080 (1).jpg', alt: 'Image 3 Alt Text', label: '', description: 'Poching caring for patient' },
+    { url: '/IMG_4081 (1).jpg', alt: 'Image 1 Alt Text', label: '', description: 'Poching taking data for patient' },
+    { url: '/IMG_4086 (1).jpg', alt: 'Image 2 Alt Text', label: '', description: 'Poching keeping a child company' },
+    { url: '/IMG_4088 (1).jpg', alt: 'Image 3 Alt Text', label: '', description: 'Poching taking data for patient' }
   ];
 }
