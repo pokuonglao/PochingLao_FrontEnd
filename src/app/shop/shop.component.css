@@ -1,4 +1,8 @@
 /* Ensure proper styling for product cards */
+.shop {
+    padding-bottom: 100px;
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
