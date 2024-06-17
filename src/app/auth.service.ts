@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   login(login: string, password: string): Observable<any> {
-    return this.http.post('http://localhost:8080/login', { login, password });
+    return this.http.post('https://dntxesd2elbxh.cloudfront.net/login', { login, password });
   }
 
   register(firstName: string, lastName: string, login: string, password: string): Observable<any> {
