@@ -1,59 +1,61 @@
 <div class="row justify-content-center">
     <div class="col-4">
-
-        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button [ngClass]="active == 'login' ? 'nav-link active' : 'nav-link'" id="tab-login" 
-                (click)="onLoginTab()">Login</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button [ngClass]="active == 'register' ? 'nav-link active' : 'nav-link'" id="tab-register" 
-                (click)="onRegisterTab()">Register</button>
-            </li>
-        </ul>
-
-        <div class="tab-content">
-            <div [ngClass]="active == 'login' ? 'tab-pane fade show active' : 'tab-pane fade'">
-                <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
-                    <div class="form-outline mb-4">
-                        <input class="form-control" type="text" id="loginName" name="login" [(ngModel)]="login" />
-                        <label class="form-label" for="loginName">Username</label>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <input class="form-control" type="password" id="loginPassword" name="password" [(ngModel)]="password" />
-                        <label class="form-label" for="loginPassword">Password</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-                </form>
+      <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [ngClass]="{ 'active': active === 'login' }" id="tab-login" (click)="onLoginTab()">
+            Login
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [ngClass]="{ 'active': active === 'register' }" id="tab-register" (click)="onRegisterTab()">
+            Register
+          </button>
+        </li>
+      </ul>
+  
+      <div class="tab-content">
+        <div class="tab-pane fade" [ngClass]="{ 'show active': active === 'login' }">
+          <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+            <div class="form-outline mb-4">
+              <input class="form-control" type="text" id="loginName" name="login" [(ngModel)]="login" />
+              <label class="form-label" for="loginName">Username</label>
             </div>
-
-            <div [ngClass]="active == 'register' ? 'tab-pane fade show active' : 'tab-pane fade'">
-                <form (ngSubmit)="onSubmitRegister()" #registerForm="ngForm">
-                    <div class="form-outline mb-4">
-                        <input class="form-control" type="text" id="firstName" name="firstName" [(ngModel)]="firstName"/>
-                        <label class="form-label" for="firstName">First Name</label>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <input class="form-control" type="text" id="lastName" name="lastName" [(ngModel)]="lastName"/>
-                        <label class="form-label" for="lastName">Last Name</label>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <input class="form-control" type="text" id="login" name="login" [(ngModel)]="login" />
-                        <label class="form-label" for="registerLogin">Username</label>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <input class="form-control" type="password" id="password" name="password" [(ngModel)]="password" />
-                        <label class="form-label" for="registerPassword">Password</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
-                </form>
+  
+            <div class="form-outline mb-4">
+              <input class="form-control" type="password" id="loginPassword" name="password" [(ngModel)]="password" />
+              <label class="form-label" for="loginPassword">Password</label>
             </div>
+  
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+          </form>
         </div>
+  
+        <div class="tab-pane fade" [ngClass]="{ 'show active': active === 'register' }">
+          <form (ngSubmit)="onSubmitRegister()" #registerForm="ngForm">
+            <div class="form-outline mb-4">
+              <input class="form-control" type="text" id="firstName" name="firstName" [(ngModel)]="firstName" />
+              <label class="form-label" for="firstName">First Name</label>
+            </div>
+  
+            <div class="form-outline mb-4">
+              <input class="form-control" type="text" id="lastName" name="lastName" [(ngModel)]="lastName" />
+              <label class="form-label" for="lastName">Last Name</label>
+            </div>
+  
+            <div class="form-outline mb-4">
+              <input class="form-control" type="text" id="registerLogin" name="login" [(ngModel)]="login" />
+              <label class="form-label" for="registerLogin">Username</label>
+            </div>
+  
+            <div class="form-outline mb-4">
+              <input class="form-control" type="password" id="registerPassword" name="password" [(ngModel)]="password" />
+              <label class="form-label" for="registerPassword">Password</label>
+            </div>
+  
+            <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  

@@ -6,9 +6,9 @@
     <button (click)="onLogout()">Logout</button>
   </div> 
   <app-welcome-content *ngIf="componentToShow === 'welcome'"></app-welcome-content>
-  <app-login-form *ngIf="componentToShow == 'login'" 
+  <app-login-form *ngIf="componentToShow === 'login'" 
     (onSubmitLoginEvent)="onLogin($event)"
     (onSubmitRegisterEvent)="onRegister($event)"
   ></app-login-form>
-  <app-dashboard-menu *ngIf="componentToShow == 'messages'"></app-dashboard-menu>
+  <app-dashboard-menu *ngIf="componentToShow === 'messages'"></app-dashboard-menu>
 </div>
