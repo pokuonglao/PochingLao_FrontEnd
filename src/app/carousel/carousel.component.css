@@ -1,13 +1,16 @@
 /* Styling for each slide wrapper */
-  .picsum-img-wrapper {
-    position: relative;
-    height: 100%; /* Set a fixed height for the images */
-    overflow: hidden; /* Ensure images do not overflow */
-  }
-  
-  .picsum-img-wrapper img {
-    width: 100%; /* Ensure images fill their container */
-    height: auto; /* Maintain aspect ratio */
+.picsum-img-wrapper {
+  max-width: auto;
+  max-height: 700px; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picsum-img-wrapper img {
+    width: 100%;
+    height: auto;
   }
   
   /* Styling for the carousel caption */
